@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="canonical" href="https://localhost/">
+    <title>Northern Axe | Valhalla Survival – Serwer Minecraft</title>
+    <meta name="description" content="Wkrocz do świata wikingów! 🪓 Przetrwaj mroźne zimy, buduj osady i walcz o honor na naszym szkolnym serwerze Survival. Zostań legendą północy! 🛡️ Zapraszamy!">
+    <meta name="keywords" content="minecraft, serwer minecraft, survival, wikingowie, viking, szkolny serwer, serwer dla uczniów, minecraft survival, polski serwer minecraft, nordycki klimat, budowanie osad, wojny wikingów, mc survival">
+    <link rel="icon" href="favicon.ico">
+    <link rel="stylesheet" href="assets/templates/css/base.css">
+</head>
+<body>
+<div class="wrapper">
+    
+    <nav>
+        <div class="logo">
+            <img src="assets/templates/images/ikona_server_minecraft.png" alt="logo serwer">
+            <header><h3>Valhalla</h3></header>
+        </div>
+        
+        <input type="checkbox" id="menu-toggle" class="menu-checkbox">
+        <label for="menu-toggle" class="hamburger-menu"><span></span></label>
+        
+        <div class="subpages">
+            <ul>
+                <li><a href="#info">info server</a></li>
+                <li><a href="#rules">regulamin</a></li>
+                <li><a href="#auth-section">dostęp</a></li>
+            </ul>
+        </div>
+        
+        <div class="login">
+            <a href="#auth-section"><button>login</button></a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <section class="banner">
+            <figure class="steve">
+                <img src="assets/templates/images/skin_Viking_steve.png" alt="steve">
+            </figure>
+            <header class="server">
+                <h1>Northern Axe</h1>
+                <small>Valhalla Survival – Serwer Minecraft</small>
+            </header>
+        </section>
+    </div>
+
+    <div class="container-fluid" id="info">
+        <section class="mc-box">
+            <h2>O Serwerze Valhalla</h2>
+            <p>Northern Axe to unikalny, szkolny serwer Survival osadzony w mroźnych i ekscytujących klimatach mitologii nordyckiej. Wznosimy wspólnie wielkie osady wikingów, handlujemy, tworzymy potężne klany i walczymy o honor na arenie. Czy zdołasz przetrwać srogą zimę i wkroczyć do samej Valhalli? Dołącz do naszej szkolnej społeczności już dziś!</p>
+        </section>
+    </div>
+
+    <div class="container-fluid" id="rules">
+        <section class="mc-box">
+            <h2>Kodeks Wikinga (Regulamin)</h2>
+            <div class="scroll-container">
+                <ol class="viking-rules">
+                    <li><strong>Honor ponad wszystko:</strong> Zakaz używania cheatów, x-rayów, wspomagaczy czy modyfikacji dających nieuczciwą przewagę (Kary wymierza Jarl banem permamentnym).</li>
+                    <li><strong>Zasada Grabieży:</strong> Serwer to survival, ale szanujemy swoją pracę. Griefowanie (niszczenie) budowli klanowych bez oficjalnie wypowiedzianej wojny jest surowo zabronione.</li>
+                    <li><strong>Kultura w karczmie:</strong> Na czacie globalnym zachowujemy kulturę. Przekleństwa, wyzwiska i toksyczność będą skutkować kneblem (wyciszeniem) przez Odyna (Administratora).</li>
+                    <li><strong>Wojny Klanów:</strong> Wojnę między klanami można wypowiedzieć tylko na forum szkoły lub dedykowanym kanale za zgodą obu stron i administracji. Takie bitwy są bezkarne.</li>
+                    <li><strong>Ochrona nowicjuszy:</strong> Nowi gracze na serwerze mają 48 godzin ochrony. Polowanie na graczy w skórzanych zbrojach przez dopakowanych wikingów w nethericie grozi łupaniem kamienia w kopalni karnej.</li>
+                    <li><strong>Bugusing:</strong> Zgłaszaj wszelkie błędy gry (np. duplikowanie przedmiotów). Wykorzystywanie błędów zamiast ich zgłaszania kończy się wygnaniem z Asgardu.</li>
+                    <li><strong>Handel:</strong> Handel wymienny między graczami jest dobrowolny. Oszustwa przy wymianach handlowych będą karane konfiskatą majątku.</li>
+                </ol>
+            </div>
+        </section>
+    </div>
+
+    <div class="container-fluid" id="auth-section">
+        <section class="mc-box auth-box">
+            
+            <input type="radio" name="auth-tab" id="tab-login" checked class="tab-radio">
+            <input type="radio" name="auth-tab" id="tab-register" class="tab-radio">
+            
+            <div class="tab-buttons">
+                <label for="tab-login" class="tab-btn btn-login">Logowanie</label>
+                <label for="tab-register" class="tab-btn btn-register">Rejestracja</label>
+            </div>
+
+            <div class="tab-content content-login">
+                <form action="#" method="POST" onsubmit="return false;">
+                    <div class="form-group">
+                        <label for="login-username">Pseudonim z Minecraft:</label>
+                        <input type="text" id="login-username" placeholder="Wpisz swój nick..." required>
+                    </div>
+                    <div class="form-group">
+                        <label for="login-password">Hasło do konta:</label>
+                        <input type="password" id="login-password" placeholder="••••••••" required>
+                    </div>
+                    <div class="form-actions">
+                        <button type="submit">Zaloguj do gry</button>
+                    </div>
+                </form>
+            </div>
+
+            <div class="tab-content content-register">
+                <form action="#" method="POST" onsubmit="return false;">
+                    <div class="form-group">
+                        <label for="reg-username">Nick w grze (Minecraft):</label>
+                        <input type="text" id="reg-username" placeholder="np. Thor_PL" minlength="3" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="reg-email">Szkolny adres E-mail:</label>
+                        <input type="email" id="reg-email" placeholder="twój-mail@szkola.pl" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="reg-password">Hasło (min. 6 znaków):</label>
+                        <input type="password" id="reg-password" placeholder="Silne hasło..." minlength="6" required>
+                    </div>
+                    <div class="form-group checkbox-group">
+                        <input type="checkbox" id="reg-terms" required>
+                        <label for="reg-terms">Akceptuję Kodeks Wikinga oraz regulamin serwera.</label>
+                    </div>
+                    <div class="form-actions">
+                        <button type="submit">Stwórz konto</button>
+                    </div>
+                </form>
+            </div>
+
+        </section>
+    </div>
+
+</div>
+</body>
+</html>
