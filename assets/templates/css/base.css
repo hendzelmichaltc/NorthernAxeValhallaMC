@@ -1,0 +1,480 @@
+@font-face{font-family:'Minecraft';src:url(../font/Minecraft-Font-Regular.ttf) format('truetype');}
+@font-face{font-family:'IBMPlexMono';src:url(../font/IBMPlexMono-Regular.woff2) format('woff2');font-display:swap}
+@font-face{font-family:'Minecrafter';src:url(../font/Minecrafter.woff2) format('woff2');font-display:swap}
+
+:root {
+    --font-family-IBMPlexMono: 'IBMPlexMono';
+    --font-family-minecrafter: 'Minecrafter';
+    
+    --font-size-base: clamp(1rem, 0.95rem + 0.25vw, 1.125rem); 
+    --font-h1: clamp(1.75rem, 1.5rem + 1.25vw, 2.5rem);   
+    --font-h2: clamp(1.5rem, 1.3rem + 1vw, 2rem);         
+    --font-h3: clamp(1.25rem, 1.15rem + 0.5vw, 1.5rem);   
+    --font-small: 0.875rem;
+    --bg-dark: #121212;
+    --text-hover: #55FF55;
+    --text-strona: #E0E0E0;
+    --szrokosc-strony: 100%;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
+    font-family: var(--font-family-IBMPlexMono);
+    font-weight: 400;
+    font-style: normal;
+    font-size: var(--font-size-base);
+    line-height: 1.5;
+    background-color: var(--bg-dark);
+    color: var(--text-strona);
+    overflow-x: hidden;
+    scroll-behavior: smooth; /* Płynne przewijanie do sekcji po kliknięciu linku */
+}
+
+/* Zapobiega rozjeżdżaniu się strony na gigantycznych ekranach (np. 2560x1440) */
+.wrapper {
+    width: 100%;
+    max-width: 1920px; 
+    margin: 0 auto; /* Środkuje całą stronę na wielkich monitorach 2K */
+    height: 100%;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-family-minecrafter);
+    font-weight: 400;
+    margin-bottom: 15px;
+}
+
+p {
+    font-family: var(--font-family-IBMPlexMono);
+}
+
+/* ==========================================================================
+   1. BAZA - EKRANY STANDARDOWE (W okolicach 1920x1080)
+   ========================================================================== */
+nav {
+    display: flex; 
+    justify-content: space-between;
+    align-items: center;
+    width: var(--szrokosc-strony);
+    height: 80px; 
+    padding: 0 5%;
+    position: sticky;
+    top: 0;
+    background-color: var(--bg-dark);
+    z-index: 1000;
+    border-bottom: 4px solid #212121; 
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 15px; 
+    flex: 1;
+    justify-content: flex-start;
+}
+
+.logo img {
+    height: 40px;
+    width: auto;
+}
+
+.logo h3 {
+    font-size: calc(var(--font-h3) * 1.5);
+    margin-bottom: 0;
+}
+
+/* Ukrycie checkboxa sterującego menu */
+.menu-checkbox {
+    display: none;
+}
+
+.subpages {
+    width: auto; 
+    text-transform: uppercase;
+    display: flex;
+    flex: 2;
+}
+
+.subpages ul {
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    list-style-type: none;
+}
+
+.subpages ul li a {
+    color: var(--text-strona);
+    text-decoration: none;
+    cursor: pointer;
+    font-weight: bold;
+    transition: color 0.2s;
+}
+
+.subpages ul li a:hover {
+    color: var(--text-hover);
+}
+
+.login {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    flex: 1;
+}
+
+button, .tab-btn {
+    background-color: #3c3c3c; 
+    color: var(--text-strona);
+    border: none;
+    padding: 12px 24px;
+    font-family: var(--font-family-IBMPlexMono); 
+    font-size: var(--font-size-base);
+    text-transform: uppercase;
+    cursor: pointer;
+    position: relative;
+    box-shadow: 
+        inset -4px -4px 0px 0px #212121, 
+        inset 4px 4px 0px 0px #8b8b8b,   
+        0px 0px 0px 4px #000000;         
+    transition: all 0.1s;
+    image-rendering: pixelated; 
+    display: inline-block;
+    text-align: center;
+}
+
+button:hover {
+    background-color: #5c8b3e; 
+    box-shadow: 
+        inset -4px -4px 0px 0px #2d4d1a, 
+        inset 4px 4px 0px 0px #82b95d,
+        0px 0px 0px 4px #000000;
+}
+
+button:active {
+    transform: translateY(2px);
+    box-shadow: 
+        inset 4px 4px 0px 0px #212121,   
+        inset -4px -4px 0px 0px #8b8b8b,
+        0px 0px 0px 4px #000000;
+}
+
+.container {
+    width: var(--szrokosc-strony);
+    height: auto;   
+}
+
+.container-fluid {
+    width: calc(var(--szrokosc-strony) - 20%);
+    margin: 40px 10%;
+    height: auto;
+}
+
+/* MINECRAFTOWE PUDEŁKO NA TREŚĆ */
+.mc-box {
+    background-color: #2e2e2e;
+    border: 4px solid #000000;
+    box-shadow: inset -6px -6px 0px #151515, inset 6px 6px 0px #4a4a4a;
+    padding: 30px;
+    margin-bottom: 30px;
+}
+
+.mc-box h2 {
+    color: #FFAA00; /* Złoty kolor w stylu Minecraft */
+    text-shadow: 2px 2px 0px #3f2a00;
+    font-size: var(--font-h2);
+    border-bottom: 4px solid #151515;
+    padding-bottom: 10px;
+}
+
+/* SYSTEM PRZEWIJANIA (SCROLLBAR) DLA REGULAMINU */
+.scroll-container {
+    max-height: 250px; /* Wysokość okienka */
+    overflow-y: auto;  /* Włącza przewijanie pionowe */
+    padding-right: 15px;
+}
+
+/* STYLOWANIE PASKA PRZEWIJANIA */
+.scroll-container::-webkit-scrollbar {
+    width: 12px;
+}
+
+.scroll-container::-webkit-scrollbar-track {
+    background: #151515; /* Tor paska */
+    border: 2px solid #000000;
+}
+
+.scroll-container::-webkit-scrollbar-thumb {
+    background: #5c8b3e; /* Zielony suwak w stylu trawy z MC */
+    border: 2px solid #000000;
+    box-shadow: inset -2px -2px 0px #2d4d1a, inset 2px 2px 0px #82b95d;
+}
+
+.scroll-container::-webkit-scrollbar-thumb:hover {
+    background: #4c7233;
+}
+
+.viking-rules {
+    padding-left: 20px;
+}
+
+.viking-rules li {
+    margin-bottom: 15px;
+    line-height: 1.6;
+}
+
+.viking-rules strong {
+    color: #55FF55; /* Jasnozielony akcent */
+}
+
+/* FORMULARZE LOGOWANIA I REJESTRACJI (ZAKŁADKI CSS) */
+.auth-box {
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.tab-radio {
+    display: none; /* Ukrywamy kropki wyboru */
+}
+
+.tab-buttons {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 25px;
+}
+
+.tab-btn {
+    flex: 1;
+    padding: 10px;
+    font-size: var(--font-small);
+}
+
+/* Logika przełączania widoczności formularzy za pomocą CSS */
+.tab-content {
+    display: none;
+}
+
+#tab-login:checked ~ .tab-buttons .btn-login,
+#tab-register:checked ~ .tab-buttons .btn-register {
+    background-color: #5c8b3e; /* Aktywna zakładka robi się zielona */
+    box-shadow: inset -4px -4px 0px 0px #2d4d1a, inset 4px 4px 0px 0px #82b95d, 0px 0px 0px 4px #000000;
+}
+
+#tab-login:checked ~ .content-login,
+#tab-register:checked ~ .content-register {
+    display: block; /* Pokazuje właściwy formularz */
+}
+
+/* STYLOWANIE ELEMENTÓW FORMULARZA */
+.form-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    font-size: var(--font-small);
+    margin-bottom: 5px;
+    color: #AAAAAA;
+}
+
+.form-group input[type="text"],
+.form-group input[type="password"],
+.form-group input[type="email"] {
+    background-color: #151515;
+    border: 3px solid #4a4a4a;
+    color: #FFF;
+    padding: 10px;
+    font-family: var(--font-family-IBMPlexMono);
+    box-shadow: inset 2px 2px 0px #000;
+    outline: none;
+}
+
+.form-group input:focus {
+    border-color: #55FF55; /* Podświetlenie na zielono przy kliknięciu */
+}
+
+.checkbox-group {
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+}
+
+.checkbox-group input {
+    cursor: pointer;
+    width: 18px;
+    height: 18px;
+}
+
+.form-actions {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.form-actions button {
+    width: 100%;
+}
+
+.banner {
+    display: grid;
+    width: var(--szrokosc-strony);
+    height: 90vh;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: repeat(9, 1fr);
+}
+
+.steve {
+    grid-column: 3 / 6;
+    grid-row: 2 / 8;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.steve img {
+    max-height: 100%;
+    width: auto;
+}
+
+.server {
+    grid-column: 7 / 12;
+    grid-row: 4 / 6;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.server h1 {
+    font-size: calc(var(--font-h1) * 2);
+    text-align: center;
+    text-shadow: 4px 4px 0px #000;
+}
+
+.server small {
+    color: #AAA;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.hamburger-menu {
+    display: none;
+}
+
+/* ==========================================================================
+   2. EKRANY OGROMNE (Dla rozdzielczości 2560x1440 i większych)
+   ========================================================================== */
+@media (min-width: 1921px) {
+    .banner {
+        height: 70vh; /* Zapobiega zbytniemu pionowemu rozciąganiu baneru na monitorach 2K */
+    }
+}
+
+/* ==========================================================================
+   3. EKRANY TELEFONÓW I TABLETÓW (Responsywność dla 768px i mniej)
+   ========================================================================== */
+@media (max-width: 768px) {
+    nav {
+        display: flex;
+        justify-content: space-between;
+        padding: 0 20px;
+        height: 70px;
+    }
+
+    .logo h3 {
+        font-size: var(--font-h3);
+    }
+
+    .login {
+        display: none; /* Ukrywamy wolny przycisk login, bo jest teraz w menu rozwijanym */
+    }
+
+    /* Generator Trzech kresek (Hamburgera), które zmieniają się w X przy kliknięciu */
+    .hamburger-menu {
+        display: block;
+        width: 30px;
+        height: 20px;
+        position: relative;
+        cursor: pointer;
+        z-index: 1001;
+    }
+
+    .hamburger-menu span,
+    .hamburger-menu::before,
+    .hamburger-menu::after {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 4px;
+        background-color: var(--text-strona);
+        box-shadow: 2px 2px 0px #000;
+        transition: all 0.3s;
+    }
+
+    .hamburger-menu::before { top: 0; }
+    .hamburger-menu span { top: 8px; }
+    .hamburger-menu::after { top: 16px; }
+
+    /* MENU MOBILNE - Domyślnie schowane nad ekranem (top: -400px) */
+    .subpages {
+        position: absolute;
+        top: -400px;
+        left: 0;
+        width: 100%;
+        background-color: #1a1a1a;
+        border-bottom: 4px solid #000;
+        padding: 20px 0;
+        transition: all 0.3s ease-in-out;
+        z-index: 999;
+    }
+
+    .subpages ul {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    /* AKCJA: Co się dzieje, gdy klikniemy ikonę menu (Checkboc Hack) */
+    .menu-checkbox:checked ~ .subpages {
+        top: 70px; /* Wysuwa menu tuż pod nawigację */
+    }
+
+    /* Animacja hamburgera zmieniająca go w krzyżyk X po kliknięciu */
+    .menu-checkbox:checked ~ .hamburger-menu::before {
+        transform: translateY(8px) rotate(45deg);
+    }
+    .menu-checkbox:checked ~ .hamburger-menu span {
+        opacity: 0;
+    }
+    .menu-checkbox:checked ~ .hamburger-menu::after {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+
+    /* Dopasowanie baneru do małych ekranów (Układ pionowy) */
+    .banner {
+        display: flex;
+        flex-direction: column-reverse;
+        height: auto;
+        padding: 40px 20px;
+        gap: 20px;
+        align-items: center;
+    }
+
+    .steve img {
+        max-height: 300px;
+    }
+
+    .server h1 {
+        font-size: var(--font-h1);
+    }
+
+    .container-fluid {
+        width: calc(var(--szrokosc-strony) - 10px);
+        margin: 20px 5px;
+    }
+}
